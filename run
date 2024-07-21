@@ -1,0 +1,8 @@
+#!/bin/bash
+docker stop php
+docker rm php
+docker rm mysql
+for I in $(docker image ls -q) ; do docker image rm $I --force ; done
+docker image list
+docker ps -a
+docker compose up
